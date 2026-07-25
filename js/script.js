@@ -28,6 +28,20 @@ darkmode.onclick = () => {
     }
 }
 
+// Interests & Hobbies pill tabs
+let pillTabs = document.querySelectorAll('.pill-tab');
+let panelGrids = document.querySelectorAll('.panel-grid');
+
+pillTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+        pillTabs.forEach((t) => t.classList.remove('active'));
+        panelGrids.forEach((p) => p.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+    });
+});
+
 // done by me
 document.addEventListener("DOMContentLoaded", function () {
     var myForm = document.getElementById("myForm");
